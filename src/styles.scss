@@ -1,36 +1,5 @@
-@import '~@angular/material/core/theming/all-theme';
-@include mat-core();
-
-$app-primary: mat-palette($mat-orange);
-$app-accent:  mat-palette($mat-amber);
-$app-warn:    mat-palette($mat-red);
-
-// Background palette for dark themes.
-$mat-dark-theme-background-translucent: (
-  status-bar: black,
-  app-bar:    rgba(mat-color($app-primary), 0.6),
-  background: #303030,
-  hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
-  card:       rgba(map_get($mat-grey, 800), 0.6),
-  dialog:     map_get($mat-grey, 800),
-  disabled-button: rgba(white, 0.12),
-  raised-button: map-get($mat-grey, 800),
-);
-
-// Create the theme object (a Sass map containing all of the palettes).
-$app-theme: (
-    primary: $app-primary,
-    accent: $app-accent,
-    warn: $app-warn,
-    is-dark: true,
-    foreground: $mat-dark-theme-foreground,
-    background: $mat-dark-theme-background-translucent,
-  );
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($app-theme);
+@import 'theme';
+@import 'Steampipsd10';
 
 body {
     background-color: black;

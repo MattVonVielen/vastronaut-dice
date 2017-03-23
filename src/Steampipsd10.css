@@ -1,0 +1,48 @@
+@font-face {
+	font-family: 'Steampips d10';
+	src: url('/assets/Steampipsd10.eot');
+	src: url('/assets/Steampipsd10.eot?#iefix') format('embedded-opentype'),
+        url('/assets/Steampipsd10.woff') format('woff'),
+		url('/assets/Steampipsd10.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.d10 {
+    display: inline-block;
+    font-family: 'Steampips d10';
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.d10-1:before {
+    content: "B";
+}
+.d10-2:before {
+    content: "C";
+}
+.d10-3:before {
+    content: "D";
+}
+.d10-4:before {
+    content: "E";
+}
+.d10-5:before {
+    content: "F";
+}
+.d10-6:before {
+    content: "G";
+}
+.d10-7:before {
+    content: "H";
+}
+.d10-8:before {
+    content: "I";
+}
+.d10-9:before {
+    content: "J";
+}
+.d10-10:before {
+    content: "L";
+}

@@ -1,4 +1,3 @@
-
 .mat-toolbar {
     font-family: 'Orbitron';
     // This fills the remaining space, by using flexbox. 
@@ -8,73 +7,23 @@
     }
 }
 
-@font-face {
-	font-family: 'Steampips d10';
-	src: url('/assets/Steampipsd10.eot');
-	src: url('/assets/Steampipsd10.eot?#iefix') format('embedded-opentype'),
-        url('/assets/Steampipsd10.woff') format('woff'),
-		url('/assets/Steampipsd10.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-.d10 {
-    display: inline-block;
-    font-family: 'Steampips d10';
+.dice-tray {
+    text-align: center;
     font-size: 5em;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-.d10-success {
-    @extend .d10;
-    color: rgba(255, 216, 64, 0.9);
+input {
+    text-align: center;
+    font-size: 18px;
+    width: 140px;
 }
 
-.d10-1:before {
-    @extend .d10;
-    content: "B";
+.d10-1 {
     color: rgba(244, 67, 54, 0.9);
 }
-.d10-2:before {
-    @extend .d10;
-    content: "C";
+.d10-7, .d10-8, .d10-9 {
+    color: rgba(255, 216, 64, 0.9);
 }
-.d10-3:before {
-    @extend .d10;
-    content: "D";
-}
-.d10-4:before {
-    @extend .d10;
-    content: "E";
-}
-.d10-5:before {
-    @extend .d10;
-    content: "F";
-}
-.d10-6:before {
-    @extend .d10;
-    content: "G";
-}
-.d10-7:before {
-    @extend .d10-success;
-    content: "H";
-}
-.d10-8:before {
-    @extend .d10-success;
-    content: "I";
-}
-.d10-9:before {
-    @extend .d10-success;
-    content: "J";
-}
-.d10-10:before {
-    @extend .d10;
-    content: "L";
+.d10-10 {
     color: rgba(67, 244, 54, 0.6);
-}
-.d10-blank:before {
-    @extend .d10;
-    content: "+";
 }

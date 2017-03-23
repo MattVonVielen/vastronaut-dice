@@ -4,10 +4,12 @@
 
 <md-card>
   <md-card-content>
-    <md-input-container>
-      <input mdInput type="number" min="1" placeholder="Number of Dice" [(ngModel)]="num"/>
-    </md-input-container>
-    <button md-raised-button color="accent" (click)="roll()">ROLL</button>
+    <form>
+      <md-input-container>
+        <input mdInput name="num" type="number" pattern="\d*" min="1" placeholder="Number of Dice" [(ngModel)]="num"/>
+      </md-input-container>
+      <button md-raised-button type="submit" color="accent" (click)="roll()">ROLL</button>
+    </form>
 
     <div *ngIf="dice.length > 0">
       <md-tab-group>
@@ -29,8 +31,8 @@
           </md-list>
         </md-tab>
         <md-tab label="Dice Pool">
-          <div style="text-align: center;">
-            <span *ngFor="let die of dice" class="d10-{{ die }}"></span>
+          <div class="dice-tray">
+            <span *ngFor="let die of dice" class="d10 d10-{{ die }}"></span>
           </div>
         </md-tab>
       </md-tab-group>
