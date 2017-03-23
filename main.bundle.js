@@ -1,6 +1,6 @@
-webpackJsonp([2,4],{
+webpackJsonp([1,4],{
 
-/***/ 404:
+/***/ 403:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -9,20 +9,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 404;
+webpackEmptyContext.id = 403;
 
 
 /***/ }),
 
-/***/ 405:
+/***/ 404:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(531);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(552);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(553);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(530);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(551);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(552);
 
 
 
@@ -35,7 +35,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 551:
+/***/ 550:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -71,8 +71,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__(609),
-            styles: [__webpack_require__(607)]
+            template: __webpack_require__(608),
+            styles: [__webpack_require__(606)]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
@@ -82,7 +82,7 @@ var AppComponent = (function () {
 
 /***/ }),
 
-/***/ 552:
+/***/ 551:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -90,8 +90,8 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(515);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(551);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(514);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(550);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -133,7 +133,7 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 553:
+/***/ 552:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -145,7 +145,7 @@ var environment = {
 
 /***/ }),
 
-/***/ 607:
+/***/ 606:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(237)();
@@ -163,19 +163,19 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 609:
+/***/ 608:
 /***/ (function(module, exports) {
 
 module.exports = "<md-toolbar>\n  <span>Vastronaut Dice</span>\n</md-toolbar>\n\n<md-card>\n  <md-card-content>\n    <form>\n      <md-input-container>\n        <input mdInput name=\"num\" type=\"number\" pattern=\"\\d*\" min=\"1\" placeholder=\"Number of Dice\" [(ngModel)]=\"num\"/>\n      </md-input-container>\n      <button md-raised-button type=\"submit\" color=\"accent\" (click)=\"roll()\">ROLL</button>\n    </form>\n\n    <div *ngIf=\"dice.length > 0\">\n      <md-tab-group>\n        <md-tab label=\"Summary\">\n          <md-list>\n            <md-list-item>\n              <p md-line>Successes</p>{{ successes }}\n            </md-list-item>\n            <md-list-item>\n              <p md-line>Critical Successes</p>{{ counts[9] }}\n            </md-list-item>\n            <md-list-item>\n              <p md-line>Critical Failures</p>{{ counts[0] }}\n            </md-list-item>\n            <md-divider></md-divider>\n            <md-list-item>\n              <p md-line>Grand Total</p>{{ successes + counts[9] - counts[0] }}\n            </md-list-item>\n          </md-list>\n        </md-tab>\n        <md-tab label=\"Dice Pool\">\n          <div class=\"dice-tray\">\n            <span *ngFor=\"let die of dice\" class=\"d10 d10-{{ die }}\"></span>\n          </div>\n        </md-tab>\n      </md-tab-group>\n    </div>\n  </md-card-content>\n</md-card>\n"
 
 /***/ }),
 
-/***/ 662:
+/***/ 658:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(405);
+module.exports = __webpack_require__(404);
 
 
 /***/ })
 
-},[662]);
+},[658]);
