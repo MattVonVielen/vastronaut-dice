@@ -57,6 +57,8 @@ var AppComponent = (function () {
         this.dice = [];
         this.counts = [];
         this.successes = 0;
+        this.previous = {};
+        this.rerolls = [];
     }
     AppComponent.prototype.roll = function () {
         this.dice = [];
@@ -67,6 +69,12 @@ var AppComponent = (function () {
             this.counts[roll - 1] += 1;
         }
         this.successes = this.counts[6] + this.counts[7] + this.counts[8] + this.counts[9];
+        this.previous[this.num] = true;
+        this.rerolls = Object.keys(this.previous).sort();
+    };
+    AppComponent.prototype.reroll = function (howMany) {
+        this.num = howMany;
+        this.roll();
     };
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Component */])({
@@ -153,7 +161,7 @@ exports = module.exports = __webpack_require__(237)();
 
 
 // module
-exports.push([module.i, ".mat-toolbar {\n  font-family: 'Orbitron'; }\n  .mat-toolbar .spacer {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto; }\n\n.dice-tray {\n  text-align: center;\n  font-size: 5em; }\n\ninput {\n  text-align: center;\n  font-size: 18px;\n  width: 140px; }\n\n.d10-1 {\n  color: rgba(244, 67, 54, 0.9); }\n\n.d10-7, .d10-8, .d10-9 {\n  color: rgba(255, 216, 64, 0.9); }\n\n.d10-10 {\n  color: rgba(67, 244, 54, 0.6); }\n", ""]);
+exports.push([module.i, ".mat-toolbar {\n  font-family: 'Orbitron'; }\n  .mat-toolbar .spacer {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto; }\n\n.dice-tray {\n  text-align: center;\n  font-size: 5em; }\n\ninput {\n  text-align: center;\n  font-size: 18px;\n  width: 140px; }\n\n.d10-1 {\n  color: #f44336; }\n\n.d10-7, .d10-8, .d10-9 {\n  color: #ffd840; }\n\n.d10-10 {\n  color: #43f436; }\n", ""]);
 
 // exports
 
@@ -166,7 +174,7 @@ module.exports = module.exports.toString();
 /***/ 608:
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar>\n  <span>Vastronaut Dice</span>\n</md-toolbar>\n\n<md-card>\n  <md-card-content>\n    <form>\n      <md-input-container>\n        <input mdInput name=\"num\" type=\"number\" pattern=\"\\d*\" min=\"1\" placeholder=\"Number of Dice\" [(ngModel)]=\"num\"/>\n      </md-input-container>\n      <button md-raised-button type=\"submit\" color=\"accent\" (click)=\"roll()\">ROLL</button>\n    </form>\n\n    <div *ngIf=\"dice.length > 0\">\n      <md-tab-group>\n        <md-tab label=\"Summary\">\n          <md-list>\n            <md-list-item>\n              <p md-line>Successes</p>{{ successes }}\n            </md-list-item>\n            <md-list-item>\n              <p md-line>Critical Successes</p>{{ counts[9] }}\n            </md-list-item>\n            <md-list-item>\n              <p md-line>Critical Failures</p>{{ counts[0] }}\n            </md-list-item>\n            <md-divider></md-divider>\n            <md-list-item>\n              <p md-line>Grand Total</p>{{ successes + counts[9] - counts[0] }}\n            </md-list-item>\n          </md-list>\n        </md-tab>\n        <md-tab label=\"Dice Pool\">\n          <div class=\"dice-tray\">\n            <span *ngFor=\"let die of dice\" class=\"d10 d10-{{ die }}\"></span>\n          </div>\n        </md-tab>\n      </md-tab-group>\n    </div>\n  </md-card-content>\n</md-card>\n"
+module.exports = "<md-toolbar>\n  <span>Vastronaut Dice</span>\n</md-toolbar>\n\n<md-card>\n  <md-card-content>\n    <form>\n      <md-input-container>\n        <input mdInput name=\"num\" type=\"number\" pattern=\"\\d*\" min=\"1\" placeholder=\"Number of Dice\" [(ngModel)]=\"num\" [mdAutocomplete]=\"auto\" />\n      </md-input-container>\n      <md-autocomplete #auto=\"mdAutocomplete\">\n        <md-option *ngFor=\"let p of rerolls\" [value]=\"p\">\n          {{p}}\n        </md-option>\n      </md-autocomplete>\n      <button md-raised-button type=\"submit\" color=\"accent\" (click)=\"roll()\">ROLL</button>\n    </form>\n\n    <div *ngIf=\"dice.length > 0\">\n      <md-tab-group>\n        <md-tab label=\"Summary\">\n          <md-list>\n            <md-list-item>\n              <p md-line>Successes</p>{{ successes }}\n            </md-list-item>\n            <md-list-item>\n              <p md-line>Critical Successes</p>{{ counts[9] }}\n            </md-list-item>\n            <md-list-item>\n              <p md-line>Critical Failures</p>{{ counts[0] }}\n            </md-list-item>\n            <md-divider></md-divider>\n            <md-list-item>\n              <p md-line>Grand Total</p>{{ successes + counts[9] - counts[0] }}\n            </md-list-item>\n          </md-list>\n        </md-tab>\n        <md-tab label=\"Dice Pool\">\n          <div class=\"dice-tray\">\n            <span *ngFor=\"let die of dice\" class=\"d10 d10-{{ die }}\"></span>\n          </div>\n        </md-tab>\n      </md-tab-group>\n    </div>\n  </md-card-content>\n</md-card>\n"
 
 /***/ }),
 
