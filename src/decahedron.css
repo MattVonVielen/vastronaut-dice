@@ -1,16 +1,16 @@
 @font-face {
-	font-family: 'Steampips d10';
-	src: url('/assets/Steampipsd10.eot');
-	src: url('/assets/Steampipsd10.eot?#iefix') format('embedded-opentype'),
-        url('/assets/Steampipsd10.woff') format('woff'),
-		url('/assets/Steampipsd10.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+  font-family: "dPoly Decahedron";
+  src: url("/assets/dPoly_Decahedron.eot?") format("eot"),
+       url("/assets/dPoly_Decahedron.woff") format("woff"),
+       url("/assets/dPoly_Decahedron.ttf") format("truetype"),
+       url("/assets/dPoly_Decahedron.svg#dPolyDecahedron") format("svg");
+  font-weight:normal;
+  font-style:normal;
 }
 
 .d10 {
     display: inline-block;
-    font-family: 'Steampips d10';
+    font-family: 'dPoly Decahedron';
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
