@@ -1,0 +1,20 @@
+<md-card class="dice-roll" (click)="closed = ! closed">
+  <md-card-header>
+    <div md-card-avatar class="avatar">
+      <div class="bignum">{{ roll.num }}</div>
+      <span [ngPlural]="roll.num">
+        <template ngPluralCase="=1">Die</template>
+        <template ngPluralCase="other">Dice</template>
+      </span>
+    </div>
+    <div class="roll-header">
+      <md-card-title>{{ roll.when | amTimeAgo }}</md-card-title>
+      <md-card-subtitle>{{roll.total}} total, {{roll.successes}} successes</md-card-subtitle>
+    </div>
+  </md-card-header>
+  <md-card-content [ngClass]="{'hidden': closed}">
+    <div class="dice-tray">
+      <span *ngFor="let die of roll.dice" class="d10 d10-{{ die }}"></span>
+    </div>
+  </md-card-content>
+</md-card>

@@ -10,32 +10,9 @@
       </md-input-container>
       <button md-raised-button type="submit" color="accent" (click)="roll()">ROLL</button>
     </form>
-
-    <div *ngIf="dice.length > 0">
-      <md-tab-group>
-        <md-tab label="Summary">
-          <md-list>
-            <md-list-item>
-              <p md-line>Successes</p>{{ successes }}
-            </md-list-item>
-            <md-list-item>
-              <p md-line>Critical Successes</p>{{ counts[9] }}
-            </md-list-item>
-            <md-list-item>
-              <p md-line>Critical Failures</p>{{ counts[0] }}
-            </md-list-item>
-            <md-divider></md-divider>
-            <md-list-item>
-              <p md-line>Grand Total</p>{{ successes + counts[9] - counts[0] }}
-            </md-list-item>
-          </md-list>
-        </md-tab>
-        <md-tab label="Dice Pool">
-          <div class="dice-tray">
-            <span *ngFor="let die of dice" class="d10 d10-{{ die }}"></span>
-          </div>
-        </md-tab>
-      </md-tab-group>
-    </div>
   </md-card-content>
 </md-card>
+
+<div class="roll-history">
+  <dice-roll *ngFor="let roll of rollHistory" [roll]="roll"></dice-roll>
+</div>
