@@ -95,13 +95,26 @@ var AppComponent = (function () {
     function AppComponent() {
         this.num = 1;
         this.rollHistory = [];
+        this.theme = 'brightest-eye';
     }
     AppComponent.prototype.roll = function () {
         this.rollHistory.unshift(new __WEBPACK_IMPORTED_MODULE_1__dice_roll__["a" /* DiceRoll */](this.num));
     };
+    AppComponent.prototype.changeTheme = function () {
+        if (this.theme === 'peacekeep') {
+            this.theme = 'brightest-eye';
+        }
+        else {
+            this.theme = 'peacekeep';
+        }
+    };
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostBinding"])('class'), 
+        __metadata('design:type', String)
+    ], AppComponent.prototype, "theme", void 0);
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-root',
+            selector: 'body',
             template: __webpack_require__(739),
             styles: [__webpack_require__(735)]
         }), 
@@ -250,7 +263,7 @@ exports = module.exports = __webpack_require__(144)();
 
 
 // module
-exports.push([module.i, ".dice-roll {\n  margin: 12px; }\n  .dice-roll .avatar {\n    text-align: center;\n    font-size: 12px; }\n    .dice-roll .avatar .bignum {\n      font-size: 22px; }\n  .dice-roll .roll-header {\n    width: 100%;\n    text-align: right; }\n  .dice-roll .dice-tray {\n    padding-top: 12px;\n    text-align: center;\n    font-size: 5em; }\n  .dice-roll .d10-1 {\n    color: #f44336; }\n  .dice-roll .d10-7, .dice-roll .d10-8, .dice-roll .d10-9 {\n    color: #ffd840; }\n  .dice-roll .d10-10 {\n    color: #43f436; }\n  .dice-roll .hidden {\n    display: none; }\n", ""]);
+exports.push([module.i, ".dice-roll {\n  margin: 12px; }\n  .dice-roll .avatar {\n    text-align: center;\n    font-size: 12px; }\n    .dice-roll .avatar .bignum {\n      font-size: 22px; }\n  .dice-roll .roll-header {\n    width: 100%;\n    text-align: right; }\n  .dice-roll .dice-tray {\n    padding-top: 12px;\n    text-align: center;\n    font-size: 5em; }\n  .dice-roll .hidden {\n    display: none; }\n", ""]);
 
 // exports
 
@@ -517,7 +530,7 @@ webpackContext.id = 737;
 /***/ 739:
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar>\n  <span>Vastronaut Dice</span>\n</md-toolbar>\n\n<md-card>\n  <md-card-content>\n    <form>\n      <md-input-container>\n        <input mdInput name=\"num\" type=\"number\" pattern=\"\\d*\" min=\"1\" placeholder=\"Number of Dice\" [(ngModel)]=\"num\"/>\n      </md-input-container>\n      <button md-raised-button type=\"submit\" color=\"accent\" (click)=\"roll()\">ROLL</button>\n    </form>\n  </md-card-content>\n</md-card>\n\n<div class=\"roll-history\">\n  <dice-roll *ngFor=\"let roll of rollHistory\" [roll]=\"roll\"></dice-roll>\n</div>\n"
+module.exports = "<md-toolbar>\n  <span>Vastronaut Dice</span>\n  <span class=\"spacer\"></span>\n  <md-icon (click)=\"changeTheme()\">palette</md-icon>\n</md-toolbar>\n\n<md-card>\n  <form>\n    <md-input-container>\n      <input mdInput name=\"num\" type=\"number\" pattern=\"\\d*\" min=\"1\" placeholder=\"Number of Dice\" [(ngModel)]=\"num\"/>\n    </md-input-container>\n    <button md-raised-button type=\"submit\" color=\"accent\" (click)=\"roll()\">ROLL</button>\n  </form>\n</md-card>\n\n<div class=\"roll-history\">\n  <dice-roll *ngFor=\"let roll of rollHistory\" [roll]=\"roll\" class=\"peacekeep\"></dice-roll>\n</div>\n"
 
 /***/ }),
 
