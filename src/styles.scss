@@ -1,9 +1,49 @@
-@import 'theme';
 @import 'decahedron';
 
+@import '~@angular/material/core/theming/all-theme';
+@include mat-core();
+
+@mixin translucent-theme($primary, $accent) {
+  $primary-palette: mat-palette($primary);
+  $accent-palette:  mat-palette($accent);
+  $theme:           mat-dark-theme($primary-palette,
+                                   $accent-palette);
+  $background:      map-get($theme, background);
+
+  $translucent-theme: map-merge($theme, (
+    background: map-merge($background, (
+      app-bar:  rgba(mat-color($primary-palette), 0.6),
+      background: rgba(map-get($background, background), 0.6),
+      card:       rgba(map-get($background, card), 0.6),
+    )),
+  ));
+
+  .d10-7, .d10-8, .d10-9 {
+    color: rgba(mat-color($accent-palette), 1);
+  }
+
+  @include angular-material-theme($translucent-theme);
+}
+
 body {
-    background-color: black;
-    background-image: url('/assets/BrightestEye.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
+  background-color: black;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.d10-1 {
+  color: rgba(mat-color(mat-palette($mat-red)), 1);
+}
+.d10-10 {
+  color: rgba(67, 244, 54, 1);
+}
+
+body.brightest-eye {
+  background-image: url('/assets/BrightestEye.jpg');
+  @include translucent-theme($mat-orange, $mat-amber);
+}
+
+body.peacekeep {
+  background-image: url('/assets/Peacekeep.jpg');
+  @include translucent-theme($mat-blue, $mat-cyan);
 }
