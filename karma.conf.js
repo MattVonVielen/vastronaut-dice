@@ -1,3 +1,5 @@
+Hey - I don't have your personal email or anything of the like. I'm kartik@simplescientist.net.  Don't be a stranger!
+
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/0.13/config/configuration-file.html
 
